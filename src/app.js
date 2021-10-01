@@ -49,7 +49,6 @@ app.use('/v1', routes)
 process.on('warning', (e) => console.warn(e.stack))
 
 app.all('*', (req, res, next) => {
-  console.log('hit')
   next(new AppError(`Can't find this url: ${req.originalUrl}`, 404))
 })
 
